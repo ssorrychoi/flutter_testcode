@@ -27,4 +27,8 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+
+  group('Unit Test', () {
+    testWidgets('Counter Unit Test', (WidgetTester tester) async {});
+  });
 }
