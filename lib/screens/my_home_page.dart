@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_code/model/counter.dart';
+import 'package:test_code/screens/http_test_page.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -33,14 +34,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
+            FlatButton(
+              child: Text('HTTP test page'),
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> HTTPTestPage())),
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () =>
-            Provider.of<Counter>(context, listen: false).increment(),
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+      floatingActionButton: Column(
+        children: <Widget>[
+          FloatingActionButton(
+            onPressed: () =>
+                Provider.of<Counter>(context, listen: false).increment(),
+            tooltip: 'Increment',
+            child: Icon(Icons.add),
+          ),
+          FloatingActionButton(
+            onPressed: () =>
+                Provider.of<Counter>(context, listen: false).decrement(),
+            tooltip: 'Increment',
+            child: Icon(Icons.content_cut),
+          ),
+        ],
       ),
     );
   }
