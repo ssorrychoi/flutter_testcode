@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
-class HTTPTestPage extends StatefulWidget {
+class TestForHTTP extends StatefulWidget {
   @override
-  _HTTPTestPageState createState() => _HTTPTestPageState();
+  _TestForHTTPState createState() => _TestForHTTPState();
 }
 
-class _HTTPTestPageState extends State<HTTPTestPage> {
+class _TestForHTTPState extends State<TestForHTTP> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Http Test'),),
-
+      appBar: AppBar(
+        title: Text('http Test'),
+      ),
+      body: Text('Hello'),
     );
   }
 }
